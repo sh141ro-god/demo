@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>test2</id>
+    <version>1.0.0</version>
+    <authors>test2</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0">
+        <dependency id="CommunityToolkit.Mvvm" version="8.4.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="8.0.28" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="8.0.28" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.SfGrid.WPF" version="33.2.12" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\off\TRAIN\test2\test2\bin\Debug\net8.0-windows\test2.runtimeconfig.json" target="lib\net8.0-windows7.0\test2.runtimeconfig.json" />
+    <file src="C:\off\TRAIN\test2\test2\bin\Debug\net8.0-windows\test2.dll" target="lib\net8.0-windows7.0\test2.dll" />
+  </files>
+</package>

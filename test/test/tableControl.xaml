@@ -1,0 +1,54 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:test"
+             xmlns:Models="clr-namespace:test.Models" xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="test.tableControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Margin="4" Padding="8" BorderBrush="#DDD" BorderThickness="1" CornerRadius="6" HorizontalAlignment ="Stretch">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment ="Center">
+                <Button Name="SaveButton" Content="Save" Margin="2" Padding="3"/>
+                <Button Name="SortButton" Content="Sorting" Margin="2" Padding="3"/>
+            </StackPanel>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
+            <ListBox x:Name="EmployeeList">  
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="4" Padding="8" BorderBrush="#DDD" BorderThickness="1" CornerRadius="6" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+
+                                <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding FullName, UpdateSourceTrigger=PropertyChanged}" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                <TextBlock  Grid.Row="2" Grid.Column="0" Text="{Binding Login}" Foreground="Gray" VerticalAlignment="Center"/>
+                                <ComboBox  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding DataContext.Jobs, RelativeSource={RelativeSource AncestorType=ListBox}}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedValue="{Binding IdJob}" Foreground="Gray" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+        </ScrollViewer>
+
+
+    </Grid>
+</UserControl>
